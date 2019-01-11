@@ -36,6 +36,7 @@ public class TransferFragment extends Fragment {
     private Context context;
     private View view;
     private static boolean isTransfer = true;
+    TransferAdapter transferAdapter;
 
     public TransferFragment() {
         // Required empty public constructor
@@ -81,7 +82,7 @@ public class TransferFragment extends Fragment {
         RecyclerView file_list = view.findViewById(R.id.transfer_list);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         file_list.setLayoutManager(linearLayoutManager);
-        TransferAdapter transferAdapter = new TransferAdapter(userFileList);
+        transferAdapter = new TransferAdapter(userFileList);
         file_list.setAdapter(transferAdapter);
         if(isTransfer){
             registerForContextMenu(file_list);
@@ -108,6 +109,8 @@ public class TransferFragment extends Fragment {
         this.getActivity().getMenuInflater().inflate(R.menu.context_menu, menu);
     }
 
+
+
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -117,6 +120,9 @@ public class TransferFragment extends Fragment {
                 MainActivity.handler.sendMessage(message);
                 break;
             case R.id.paused:
+                if(transferAdapter.getUserFile()!=null){
+
+                }
                 break;
         }
         return super.onContextItemSelected(item);

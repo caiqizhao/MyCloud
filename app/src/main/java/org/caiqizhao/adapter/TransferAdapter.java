@@ -19,6 +19,18 @@ import java.util.List;
 public class TransferAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder> {
     List<UserFile > userFileList = new ArrayList<UserFile>();
 
+    public UserFile getUserFile() {
+        return userFile;
+    }
+
+    public void setUserFile(UserFile userFile) {
+        this.userFile = userFile;
+    }
+
+    private UserFile userFile = null;
+
+
+
     public TransferAdapter(List<UserFile> userFileList) {
         this.userFileList = userFileList;
     }
@@ -38,6 +50,15 @@ public class TransferAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder
         holder.file_tupian.setImageResource(R.drawable.file);
         holder.file_name.setText(userFile.getFile_name());
         holder.file_data.setText(userFile.getFile_size()+"  "+userFile.getFile_date());
+        final int i = holder.getAdapterPosition();
+        holder.view.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                setUserFile(userFileList.get(i));
+                //mPostion = getmPostion();
+                return false;
+            }
+        });
 
     }
 
@@ -51,11 +72,12 @@ public class TransferAdapter extends RecyclerView.Adapter<FileAdapter.ViewHolder
         ImageView file_tupian;
         TextView file_name;
         TextView file_data;
-
+        View view;
 
 
         public ViewHolder(View itemView) {
             super(itemView);
+            view = itemView;
             file_tupian = itemView.findViewById(R.id.file_tupiao);
             file_name = itemView.findViewById(R.id.file_name);
             file_data = itemView.findViewById(R.id.file_size);
