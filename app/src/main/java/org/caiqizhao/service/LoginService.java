@@ -8,6 +8,7 @@ import android.os.Message;
 
 import com.example.caiqizhao.mycloud.Main;
 
+import org.caiqizhao.util.PasswordSHA1Util;
 import org.caiqizhao.util.VariableUtil;
 
 import java.io.IOException;
@@ -41,7 +42,7 @@ public class LoginService extends Service {
                 OkHttpClient client = new OkHttpClient();
                 RequestBody requestBody = new FormBody.Builder()
                         .add("username",username)
-                        .add("password",password)
+                        .add("password",PasswordSHA1Util.generateSHA1(password))
                         .build();
                 Request request = new Request.Builder()
                         .url(VariableUtil.Service_IP +"login")

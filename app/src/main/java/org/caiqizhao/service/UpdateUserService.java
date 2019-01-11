@@ -10,6 +10,7 @@ import com.example.caiqizhao.mycloud.Main;
 
 import org.caiqizhao.activity.UpdataUserActivity;
 import org.caiqizhao.fragments.ConfigUser;
+import org.caiqizhao.util.PasswordSHA1Util;
 import org.caiqizhao.util.VariableUtil;
 
 import java.io.IOException;
@@ -120,7 +121,7 @@ public class UpdateUserService extends Service {
                                 .add("username",username)
                                 .add("password",password)
                                 .add("code",code+"")
-                                .add("newpassword",new_password)
+                                .add("newpassword",PasswordSHA1Util.generateSHA1(new_password))
                                 .build();
                         Request request = new Request.Builder()
                                 .url(VariableUtil.Service_IP +"updateuser")

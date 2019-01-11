@@ -19,6 +19,7 @@ import com.example.caiqizhao.mycloud.R;
 
 import org.caiqizhao.entity.User;
 import org.caiqizhao.service.UpdateUserService;
+import org.caiqizhao.util.PasswordSHA1Util;
 import org.caiqizhao.util.ToastUtil;
 import org.caiqizhao.util.VerityCode;
 
@@ -104,7 +105,7 @@ public class UpdataUserActivity extends AppCompatActivity {
                                 newpassword_agin_str.trim().equals("")){
                             ToastUtil.showToast(UpdataUserActivity.this,"密码编辑框不能为空白");
                         }else {
-                            if(password_str.equals(User.user.getUser_password())){
+                            if((PasswordSHA1Util.generateSHA1(password_str)).equals(User.user.getUser_password())){
                                 if(newpassword_str.equals(newpassword_agin_str)){
                                     Intent intent = new Intent(UpdataUserActivity.this,UpdateUserService.class);
                                     Bundle data = new Bundle();
