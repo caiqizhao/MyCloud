@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/xinjian"
+        android:title="新建文件夹"
+        app:showAsAction="ifRoom" >
+        <menu>
+            <item
+                android:id="@+id/upload"
+                android:title="上传"
+                app:showAsAction="never" />
+            <item
+                android:id="@+id/create_dir"
+                android:title="新建文件夹"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+
+</menu>

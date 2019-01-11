@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/file_bar"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#459cc7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/file_bottom" />
+</FrameLayout>

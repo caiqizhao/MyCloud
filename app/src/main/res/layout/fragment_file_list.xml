@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/file_toolbar"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        app:title="文件管理"
+        app:popupTheme="@style/OverflowMenuStyle"
+        >
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="文件管理"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:textSize="18sp" />-->
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/file_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

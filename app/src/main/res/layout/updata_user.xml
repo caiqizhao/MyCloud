@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.caiqizhao.activity.UpdataUserActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/return_main_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:src="@drawable/fanhui" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="个人信息修改"
+            android:textColor="#151515"
+            android:textSize="20sp" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:id="@+id/upadta_name_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="291dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text=""
+            android:textSize="20sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qianjin" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/updata_password_button"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账   户"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/user_id"
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text=""
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/updata_password_button"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+
+        <TextView
+            android:layout_width="352dp"
+            android:layout_height="wrap_content"
+            android:text="修改密码"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qianjin" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
